@@ -107,7 +107,6 @@ const Home = () => {
               <p className="text-gray-600 text-sm">Analysis of ocean chemistry, nutrient cycles, and chemical processes affecting marine environments.</p>
               </div>
             </div>
-          </div>
         </div>
       </section>
 
