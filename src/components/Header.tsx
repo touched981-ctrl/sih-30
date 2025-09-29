@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, Database, Map, Fish, Dna, BookOpen, Bot } from 'lucide-react';
+import { Search, Database, Map, Fish, Dna, BookOpen, Bot, Waves } from 'lucide-react';
 
 const Header = () => {
   const location = useLocation();
@@ -16,16 +16,16 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-lg">
+    <header className="sticky top-0 z-50 glass-dark shadow-lg">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* 2. This Link wrapper makes the name and icon clickable, taking the user to the homepage. */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-[#30345E] rounded-lg flex items-center justify-center">
-              <Fish className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 glass rounded-lg flex items-center justify-center float">
+              <Waves className="w-5 h-5 text-bioluminescent" />
             </div>
             {/* 3. Changed the website name to "Shark" */}
-            <span className="text-xl font-semibold text-[#30345E]">Shark</span>
+            <span className="text-xl font-semibold text-white">Shark</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
@@ -33,10 +33,10 @@ const Header = () => {
               <Link
                 key={path}
                 to={path}
-                className={`flex items-center space-x-2 text-sm font-medium transition-all duration-200 hover:text-[#30345E] ${
+                className={`flex items-center space-x-2 text-sm font-medium transition-all duration-200 hover:text-turquoise ${
                   location.pathname === path
-                    ? 'text-[#30345E] border-b-2 border-[#30345E] pb-1'
-                    : 'text-gray-600 hover:border-b-2 hover:border-[#30345E] hover:pb-1'
+                    ? 'text-turquoise border-b-2 border-turquoise pb-1'
+                    : 'text-gray-300 hover:border-b-2 hover:border-turquoise hover:pb-1'
                 }`}
               >
                 {Icon && <Icon className="w-4 h-4" />}
@@ -45,7 +45,7 @@ const Header = () => {
             ))}
           </nav>
 
-          <Link to="/ai" className="bg-[#30345E] text-white px-6 py-2 rounded-md font-medium hover:scale-105 hover:bg-[#25284A] transition-all duration-200 flex items-center space-x-2">
+          <Link to="/ai" className="bio-btn text-white px-6 py-2 rounded-full font-medium transition-all duration-200 flex items-center space-x-2">
             <Bot className="w-4 h-4" />
             <span>AI Assistant</span>
           </Link>
